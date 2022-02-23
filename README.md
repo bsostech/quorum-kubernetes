@@ -32,11 +32,11 @@ The current repo layout is:
   ├── docker
   │   └── istanbul-tools            # helper docker images used for various tasks
   ├── ingress                       # ingress rules, hidden here for brevity
-  │   ├── ...                       
+  │   ├── ...
   ├── azure                         # azure specific artifacts
   │   ├── arm                       # azure ARM templates to deploy resources ie cluster, keyvault, identity etc
   │   └── scripts                   # azure scripts to install CSI drivers on the AKS cluster and the like
-  ├── playground                    # playground for users to get familiar with concepts and how to run and tweak things - START HERE 
+  ├── playground                    # playground for users to get familiar with concepts and how to run and tweak things - START HERE
   │   └── kubectl
   │       ├── quorum-besu           # use Hyperledger Besu as the block chain client
   │       │   ├── clique
@@ -48,20 +48,20 @@ The current repo layout is:
   │       └── quorum-go             # use GoQuorum as the block chain client
   │           └── ibft
   │               └── ...
-  ├── dev                       
-  │   └── helm  
-  │       ├── charts            
+  ├── dev
+  │   └── helm
+  │       ├── charts
   │       │   ├── ...               # dev helm charts, hidden here for brevity
-  │       └── values            
+  │       └── values
   │           ├── ...               # values.yml overrides for various node types
-  ├── prod                      
-  │   └── helm  
-  │       ├── charts            
+  ├── prod
+  │   └── helm
+  │       ├── charts
   │       │   ├── ...              # prod helm charts - these will use cloud native services where possible eg IAM for identity, keyvault for secrets etc
-  │       └── values            
+  │       └── values
   │           ├── ...              # values.yml overrides for various node types
   └── static                       # images and other static assets
-  
+
 
 
 ```
@@ -81,7 +81,7 @@ If you are deploying locally you need a Kubernetes cluster like [Minikube](https
 Currently we do not deploy anything in the 'default' namespace. Anything related to Besu gets spun up in a 'besu' namespace, and 'quorum' for GoQuorum; with the monitoring pieces get spun up in a 'monitoring' namespace.
 Namespaces are part of the setup and do not need to be created via kubectl prior to deploying. To change the namespaces:
 - In Kubectl, you need to edit every file in the deployment
-- In Helm, edit the namespace value in the values.yaml 
+- In Helm, edit the namespace value in the values.yaml
 
 It is recommended you follow this approach as well in your production setups and where possible use Service Accounts to secure deployments & statefulsets. We make use of these extensively.
 

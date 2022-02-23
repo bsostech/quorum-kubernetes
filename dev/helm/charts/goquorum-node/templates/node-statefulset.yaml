@@ -145,7 +145,7 @@ spec:
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: {{ .Values.node.quorum.metrics.pprofport | quote}}
-        prometheus.io/path: "/debug/metrics/prometheus"        
+        prometheus.io/path: "/debug/metrics/prometheus"
     spec:
       serviceAccountName: {{ include "goquorum-node.fullname" . }}-sa
       containers:
@@ -386,4 +386,3 @@ spec:
             - key: tesseraPeers
               path: tesseraPeers
       {{- end }}
-

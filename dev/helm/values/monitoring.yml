@@ -1,7 +1,0 @@
----
-grafana:
-  username: admin
-  password: password
-
-# local / azure
-provider: local
