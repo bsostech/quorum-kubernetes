@@ -100,7 +100,7 @@ spec:
 
                   # add to the static-nodes
                   pubkey=$(cat $FOLDER_PATH/${f}/nodekey.pub )
-                  echo ",\"enode://$pubkey@goquorum-node-validator-$i-0.goquorum-node-validator-$i.{{ .Release.Namespace }}.svc.cluster.local:30303?discport=0\"" >> /generated-config/static-nodes.json
+                  echo ",\"enode://$pubkey@goquorum-node-validator-$i.{{ .Release.Namespace }}.svc.cluster.local:30303?discport=0\"" >> /generated-config/static-nodes.json
 
                   i=$((i+1))
                 fi
