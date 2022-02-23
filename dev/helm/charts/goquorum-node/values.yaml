@@ -3,13 +3,13 @@
 image:
   quorum:
     repository: quorumengineering/quorum
-    tag: latest
+    tag: 22.1.0
   tessera:
     repository: quorumengineering/tessera
     tag: latest
   hooks:
     repository: consensys/quorum-k8s-hooks
-    tag: latest
+    tag: qgt
     pullPolicy: IfNotPresent
 
 # local / azure / aws
