@@ -18,24 +18,45 @@ spec:
   rules:
   - http:
       paths:
-      - path: /rpc
+      - path: /validator-1
         pathType: Prefix
         backend:
           service:
-            name: goquorum-node-member-1
+            name: goquorum-node-validator-1
             port:
               number: 8545
-      - path: /
+      - path: /validator-2
         pathType: Prefix
         backend:
           service:
-            name: quorum-monitoring-monitoring-grafana
+            name: goquorum-node-validator-2
             port:
-              number: 3000
-      - path: /kibana
+              number: 8545
+      - path: /validator-3
         pathType: Prefix
         backend:
           service:
-            name: kibana-kibana
+            name: goquorum-node-validator-3
             port:
-              number: 5601
+              number: 8545
+      - path: /validator-4
+        pathType: Prefix
+        backend:
+          service:
+            name: goquorum-node-validator-4
+            port:
+              number: 8545
+      # - path: /
+      #   pathType: Prefix
+      #   backend:
+      #     service:
+      #       name: quorum-monitoring-monitoring-grafana
+      #       port:
+      #         number: 3000
+      # - path: /kibana
+      #   pathType: Prefix
+      #   backend:
+      #     service:
+      #       name: kibana-kibana
+      #       port:
+      #         number: 5601
