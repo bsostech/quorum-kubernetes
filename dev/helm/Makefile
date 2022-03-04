@@ -18,6 +18,7 @@ install-ingress:
 		--set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux \
 		--set controller.admissionWebhooks.patch.nodeSelector."beta\.kubernetes\.io/os"=linux \
 		--set controller.service.externalTrafficPolicy=Cluster && \
+		--set controller.service.loadBalancerIP=34.81.14.201 && \
 	kubectl apply -f ../../ingress/ingress-rules-quorum.yml
 
 # spin up a quorum and tessera node pair
@@ -39,7 +40,7 @@ uninstall-txnode:
 uninstall-ingress:
 	helm uninstall quorum-ingress -n quorum
 
-INGRESS_IP = 104.199.180.194
+INGRESS_IP = 34.81.14.201
 
 # HTTP RPC API:
 test-rpc:
