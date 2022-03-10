@@ -17,7 +17,7 @@ install-ingress:
 		--set controller.nodeSelector."beta\.kubernetes\.io/os"=linux \
 		--set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux \
 		--set controller.admissionWebhooks.patch.nodeSelector."beta\.kubernetes\.io/os"=linux \
-		--set controller.service.externalTrafficPolicy=Cluster && \
+		--set controller.service.externalTrafficPolicy=Cluster \
 		--set controller.service.loadBalancerIP=${INGRESS_IP} && \
 	kubectl apply -f ../../ingress/ingress-rules-quorum.yml
 
