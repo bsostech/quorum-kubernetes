@@ -69,6 +69,21 @@ parameters:
   type: gp2
   fsType: ext4
 
+{{- else if eq .Values.provider "gcp" }}
+
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: {{ include "goquorum-node.fullname" . }}-storage
+  namespace: {{ .Release.Namespace }}
+provisioner: kubernetes.io/gce-pd
+reclaimPolicy: Retain
+allowVolumeExpansion: true
+parameters:
+  type: pd-standard
+  fstype: ext4
+
 {{- else }}
 
 ---

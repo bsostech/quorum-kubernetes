@@ -4,8 +4,8 @@ image:
   tag: qgt
   pullPolicy: IfNotPresent
 
-# local / azure
-provider: local
+# local / azure / aws / gcp
+provider: gcp
 
 # the number of Validators you want
 rawGenesisConfig:

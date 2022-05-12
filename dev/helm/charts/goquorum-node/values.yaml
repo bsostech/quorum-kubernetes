@@ -12,8 +12,8 @@ image:
     tag: qgt
     pullPolicy: IfNotPresent
 
-# local / azure / aws
-provider: local
+# local / azure / aws / gcp
+provider: gcp
 
 nodeFlags:
   bootnode: false
